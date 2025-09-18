@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave - Ultimate Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h1>SoundWave</h1>
+            </div>
+            <div class="header-controls">
+                <div class="spotify-status" id="spotifyStatus">
+                    <button class="btn btn--outline btn--sm" id="spotifyConnect">
+                        <i class="fab fa-spotify"></i>
+                        Connect Spotify
+                    </button>
+                    <div class="spotify-connected" id="spotifyConnected" style="display: none;">
+                        <i class="fab fa-spotify"></i>
+                        <span>Connected</span>
+                    </div>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Player Section -->
+        <main class="player-section">
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-state-content">
+                    <div class="empty-state-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h2>Welcome to SoundWave</h2>
+                    <p>Discover and play your favorite music with our ultimate music player</p>
+                    <button class="btn btn--primary btn--lg" id="addMusicEmpty">
+                        <i class="fas fa-plus"></i>
+                        Add Song
+                    </button>
+                </div>
+            </div>
+
+            <!-- Now Playing -->
+            <div class="now-playing" id="nowPlaying" style="display: none;">
+                <div class="album-art-container">
+                    <div class="album-art-wrapper">
+                        <img src="" alt="Album Art" class="album-art" id="albumArt">
+                        <div class="album-art-overlay">
+                            <div class="play-overlay" id="playOverlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-info">
+                    <h2 class="song-title" id="songTitle">Select a song to play</h2>
+                    <p class="song-artist" id="songArtist">Choose from your playlist</p>
+                    <p class="song-album" id="songAlbum">Welcome to SoundWave</p>
+                    <div class="song-source" id="songSource">
+                        <i class="fas fa-folder"></i>
+                        <span>My Music</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <span class="time current-time" id="currentTime">0:00</span>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-handle" id="progressHandle"></div>
+                    </div>
+                </div>
+                <span class="time total-time" id="totalTime">0:00</span>
+            </div>
+
+            <!-- Main Controls -->
+            <div class="main-controls" id="mainControls" style="display: none;">
+                <button class="control-btn control-btn--secondary" id="skipBackBtn" title="Skip back 15s">
+                    <i class="fas fa-backward-step"></i>
+                </button>
+                <button class="control-btn control-btn--secondary" id="prevBtn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn control-btn--primary play-pause" id="playPauseBtn" title="Play/Pause">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn control-btn--secondary" id="nextBtn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn control-btn--secondary" id="skipForwardBtn" title="Skip forward 15s">
+                    <i class="fas fa-forward-step"></i>
+                </button>
+            </div>
+
+            <!-- Secondary Controls -->
+            <div class="secondary-controls" id="secondaryControls" style="display: none;">
+                <button class="control-btn control-btn--small" id="shuffleBtn" title="Shuffle">
+                    <i class="fas fa-shuffle"></i>
+                </button>
+                <div class="volume-control">
+                    <button class="control-btn control-btn--small" id="volumeBtn" title="Volume">
+                        <i class="fas fa-volume-high"></i>
+                    </button>
+                    <div class="volume-slider-container">
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                        <div class="volume-tooltip" id="volumeTooltip">70%</div>
+                    </div>
+                </div>
+                <button class="control-btn control-btn--small" id="repeatBtn" title="Repeat">
+                    <i class="fas fa-repeat"></i>
+                </button>
+            </div>
+
+            <!-- Visualizer -->
+            <div class="visualizer" id="visualizer" style="display: none;">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+            </div>
+        </main>
+
+        <!-- Playlist Sidebar -->
+        <aside class="playlist-sidebar">
+            <div class="playlist-header">
+                <div class="playlist-title">
+                    <select class="playlist-selector" id="playlistSelector">
+                        <option value="my-music">My Music</option>
+                        <option value="spotify-tracks">Spotify Tracks</option>
+                    </select>
+                </div>
+                <div class="playlist-controls">
+                    <button class="btn-icon" id="createPlaylistBtn" title="Create Playlist">
+                        <i class="fas fa-folder-plus"></i>
+                    </button>
+                    <button class="btn-icon" id="addSongBtn" title="Add Music">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Source Filter -->
+            <div class="source-filter">
+                <button class="source-btn active" data-source="all" id="filterAll">
+                    <i class="fas fa-list"></i>
+                    <span>All</span>
+                </button>
+                <button class="source-btn" data-source="local" id="filterLocal">
+                    <i class="fas fa-folder"></i>
+                    <span>Local</span>
+                </button>
+                <button class="source-btn" data-source="spotify" id="filterSpotify">
+                    <i class="fab fa-spotify"></i>
+                    <span>Spotify</span>
+                </button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search your music...">
+                    <button class="search-clear" id="searchClear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Playlist -->
+            <div class="playlist-container">
+                <div class="playlist-empty" id="playlistEmpty">
+                    <div class="playlist-empty-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <p>No songs in this playlist</p>
+                    <button class="btn btn--secondary btn--sm" id="addMusicEmpty2">
+                        <i class="fas fa-plus"></i>
+                        Add Music
+                    </button>
+                </div>
+                <div class="playlist" id="playlist">
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" preload="none" crossorigin="anonymous"></audio>
+
+    <!-- Add Music Modal -->
+    <div class="modal hidden" id="addMusicModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Music</h3>
+                <button class="modal-close" id="closeAddMusicModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="add-music-options">
+                    <div class="add-option" id="uploadOption">
+                        <div class="add-option-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h4>Upload from Device</h4>
+                        <p>Add MP3, WAV, FLAC, and other audio files from your device</p>
+                        <input type="file" id="fileInput" accept=".mp3,.wav,.flac,.ogg,.m4a,.aac" multiple style="display: none;">
+                    </div>
+                    <div class="add-option" id="spotifyOption">
+                        <div class="add-option-icon spotify-icon">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <h4>Search Spotify</h4>
+                        <p>Find and add tracks from Spotify's vast music library</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Upload Modal -->
+    <div class="modal hidden" id="uploadModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content upload-modal-content">
+            <div class="modal-header">
+                <h3>Upload Music Files</h3>
+                <button class="modal-close" id="closeUploadModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-zone-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h4>Drag & drop your music files here</h4>
+                    <p>or click to browse and select files</p>
+                    <p class="upload-formats">Supported formats: MP3, WAV, FLAC, OGG, M4A, AAC</p>
+                </div>
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <h4>Uploading Files</h4>
+                    <div class="upload-files" id="uploadFiles"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotify Search Modal -->
+    <div class="modal hidden" id="spotifyModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content spotify-modal-content">
+            <div class="modal-header">
+                <h3>Search Spotify Music</h3>
+                <button class="modal-close" id="closeSpotifyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="spotify-search">
+                    <div class="spotify-search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="form-control" id="spotifySearchInput" placeholder="Search for songs, artists, albums...">
+                        <button class="btn btn--primary" id="spotifySearchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="spotify-results" id="spotifyResults">
+                    <div class="spotify-results-empty">
+                        <i class="fab fa-spotify"></i>
+                        <p>Search for music to see results here</p>
+                    </div>
+                </div>
+                <div class="spotify-loading" id="spotifyLoading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Searching Spotify...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Playlist Modal -->
+    <div class="modal hidden" id="createPlaylistModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Playlist</h3>
+                <button class="modal-close" id="closePlaylistModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Playlist Name</label>
+                    <input type="text" class="form-control" id="playlistNameInput" placeholder="My Awesome Playlist">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description (Optional)</label>
+                    <textarea class="form-control" id="playlistDescInput" rows="3" placeholder="Describe your playlist..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="cancelPlaylist">Cancel</button>
+                <button class="btn btn--primary" id="confirmPlaylist">Create Playlist</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div class="context-menu hidden" id="contextMenu">
+        <div class="context-item" id="contextPlay">
+            <i class="fas fa-play"></i>
+            <span>Play Now</span>
+        </div>
+        <div class="context-item" id="contextAddToPlaylist">
+            <i class="fas fa-plus"></i>
+            <span>Add to Playlist</span>
+        </div>
+        <div class="context-item" id="contextRemove">
+            <i class="fas fa-trash"></i>
+            <span>Remove</span>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p id="loadingText">Loading...</p>
+        </div>
+    </div>
+
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+<script src="app-spotify-web-sdk.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
