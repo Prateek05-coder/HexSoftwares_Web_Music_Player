@@ -12,7 +12,7 @@
 [![Spotify API](https://img.shields.io/badge/Spotify-1DB954?style=flat-square&logo=spotify&logoColor=white)](https://developer.spotify.com/)
 [![IndexedDB](https://img.shields.io/badge/IndexedDB-FF6B35?style=flat-square&logo=firefox&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 
-[🚀 Live Demo](#) | [📖 Documentation](#features) | [🛠️ Installation](#installation) | [🎨 Screenshots](#screenshots)
+| [📖 Documentation](#features) | [🛠️ Installation](#installation) | 
 
 </div>
 
@@ -80,23 +80,6 @@
 | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | ![Spotify](https://img.shields.io/badge/-Spotify%20API-1DB954?style=flat-square&logo=spotify&logoColor=white) | ![IndexedDB](https://img.shields.io/badge/-IndexedDB-FF6B35?style=flat-square&logo=firefox&logoColor=white) |
 | ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | ![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white) | ![Web Audio](https://img.shields.io/badge/-Web%20Audio%20API-FF6B9D?style=flat-square&logo=webaudio&logoColor=white) | ![Local Storage](https://img.shields.io/badge/-Local%20Storage-FFA500?style=flat-square&logo=html5&logoColor=white) |
 | ![JavaScript](https://img.shields.io/badge/-JavaScript%20ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | ![File System](https://img.shields.io/badge/-File%20System-4285F4?style=flat-square&logo=files&logoColor=white) | ![OAuth 2.0](https://img.shields.io/badge/-OAuth%202.0-3C99DC?style=flat-square&logo=oauth&logoColor=white) | ![Blob Storage](https://img.shields.io/badge/-Blob%20Storage-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) |
-
-</div>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-### 🌟 Main Interface
-![Main Interface](https://via.placeholder.com/800x450/FF6B9D/FFFFFF?text=SoundWave+Main+Interface)
-
-### 🎵 Now Playing
-![Now Playing](https://via.placeholder.com/400x300/1DB954/FFFFFF?text=Now+Playing)
-
-### 📱 Mobile View
-![Mobile Interface](https://via.placeholder.com/300x600/333333/FFFFFF?text=Mobile+Interface)
 
 </div>
 
@@ -209,9 +192,7 @@ soundwave-music-player/
 ├── style.css              # Complete styling and themes
 ├── app.js                 # Core application logic
 ├── README.md              # Project documentation
-└── assets/
-    ├── icons/             # UI icons and graphics
-    └── screenshots/       # Demo screenshots
+
 ```
 
 ### 🔧 Core Components
@@ -343,7 +324,7 @@ copies or substantial portions of the Software.
 
 ### 🛠️ Built With Love By
 
-- **Developer**: [Your Name](https://github.com/yourusername)
+- **Developer**: G. Meher Prateek(https://github.com/Prateek05-coder)
 - **Company**: [HexSoftwares](https://hexsoftwares.com)
 - **Year**: 2025
 
@@ -368,17 +349,13 @@ This project supports artists and the music industry by:
 <div align="center">
 
 ### 🌐 **Links**
-
-[![Website](https://img.shields.io/badge/Website-FF6B9D?style=for-the-badge&logo=google-chrome&logoColor=white)](https://your-website.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername/soundwave-music-player)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/prateek05-coder/soundwave-music-player)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/g-meher-prateek)
 
 ### 📧 **Get in Touch**
 
-**Email**: your.email@example.com  
-**Discord**: YourUsername#1234  
-**Website**: [your-website.com](https://your-website.com)
+**Email**: meherprateekg@gmail.com   
+**Website**: [https://Prateek.com](https://prateek](https://prateek05-coder.github.io/))
 
 </div>
 
@@ -390,9 +367,9 @@ This project supports artists and the music industry by:
 
 If you found this project helpful, please consider:
 
-[![Star on GitHub](https://img.shields.io/github/stars/yourusername/soundwave-music-player?style=social)](https://github.com/yourusername/soundwave-music-player/stargazers)
-[![Fork on GitHub](https://img.shields.io/github/forks/yourusername/soundwave-music-player?style=social)](https://github.com/yourusername/soundwave-music-player/network/members)
-[![Follow on GitHub](https://img.shields.io/github/followers/yourusername?style=social)](https://github.com/yourusername)
+[![Star on GitHub](https://img.shields.io/github/stars/prateek05-coder/soundwave-music-player?style=social)](https://github.com/prateek05-coder/soundwave-music-player/stargazers)
+[![Fork on GitHub](https://img.shields.io/github/forks/prateek05-coder/soundwave-music-player?style=social)](https://github.com/prateek05-coder/soundwave-music-player/network/members)
+[![Follow on GitHub](https://img.shields.io/github/followers/prateek05-coder?style=social)](https://github.com/prateek05-coder)
 
 **⭐ Star the repository** | **🍴 Fork the project** | **🐛 Report bugs** | **💡 Request features**
 
