@@ -352,11 +352,6 @@ This project supports artists and the music industry by:
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/prateek05-coder/soundwave-music-player)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/g-meher-prateek)
 
-### 📧 **Get in Touch**
-
-**Email**: meherprateekg@gmail.com   
-**Website**: [https://Prateek.com](https://prateek](https://prateek05-coder.github.io/))
-
 </div>
 
 ---
